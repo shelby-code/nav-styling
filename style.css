@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgb(105, 105, 175) 0%, rgb(105, 105, 175) 50%, rgb(23, 23, 51) 50%, rgb(23, 23, 51) 100%);
+
+}
+
+
+nav{
+    background-color: whitesmoke;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    margin: 0px;
+    transition: width 0.7s linear;
+}
+
+.btn{
+    padding: 0;
+    border: 0;
+    position: relative;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+}
+
+.line{
+    position: absolute;
+    background-color: rgb(58, 48, 56);
+    height: 2px;
+    width: 20px;
+    transition: all 0.7s linear;
+}
+.line1{
+    top: 10px;
+    height: 2px;
+}
+
+nav.active .btn .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .btn .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+}
+
+
+.line2{
+   bottom: 10px;
+   height: 2px;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0 10px 0 0;
+    justify-content: center;
+    padding: 0px;
+    width: 0;
+}
+
+nav.active ul{
+    width: 100%;
+}
+
+nav ul li{
+    margin: 10px;
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 0.7s linear;
+}
+nav.active{
+    width: 350px;
+}
+
+nav.active ul li{
+    opacity: 1;
+    transform: rotateY(360deg);
+    transition: transform 1s linear;
+}
+
